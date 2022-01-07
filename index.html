@@ -13,18 +13,12 @@
 <body>
     <div class="caculator">
         <div class="caculator-screen">
-            <div class="screen-result">
-                <div id="screen-old"></div>
-                <div id="caculation"> </div>
-            </div>
-
-
-            <div class="screen-result screen-new" id="screen-new"></div>
+            <div class="screen-result" id="screen-result"></div>
         </div>
         <div class="caculator-group">
             <button class="btn" onclick="removeContent()">C</button>
-            <button class="btn caculation">(</button>
-            <button class="btn caculation">)</button>
+            <button class="btn caculation" onclick="caculation(this)">(</button>
+            <button class="btn caculation" onclick="caculation(this)">)</button>
             <button class="btn caculation" onclick="caculation(this)">/</button>
         </div>
         <div class="caculator-group">
@@ -46,9 +40,9 @@
             <button class="btn caculation" onclick="caculation(this)">+</button>
         </div>
         <div class="caculator-group">
-            <button class="btn">Del</button>
+            <button class="btn" onclick="del()">Del</button>
             <button class="btn number" onclick="number(this)">0</button>
-            <button class="btn caculation" onclick="number(this)">.</button>
+            <button class="btn number" onclick="number(this)">.</button>
             <button class="btn caculation " onclick="calculate() ">=</button>
         </div>
     </div>

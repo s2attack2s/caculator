@@ -1,61 +1,26 @@
-var screen_old = document.getElementById('screen-old');
-var screen_new = document.getElementById('screen-new');
-var ca = document.getElementById('caculation');
+var screen_result = document.getElementById('screen-result');
+
 number = (num) => {
-
-    // hiển thị số thứ nhất
-
-    if (screen_old.innerHTML == "") {
-        let numberContent = num.innerHTML;
-        valueScreen = screen_old.innerHTML + numberContent;
-        let formatNumber = Number(valueScreen);
-        screen_old.innerHTML = formatNumber;
-    } else {
-        let numberContent = num.innerHTML;
-        valueScreen = screen_new.innerHTML + numberContent;
-        let formatNumber = Number(valueScreen);
-        screen_new.innerHTML = formatNumber;
+    let numberContent = num.innerHTML;
+    valueScreen = screen_result.innerHTML + numberContent;
+    screen_result.innerHTML = valueScreen;
+    return caculation = (cacul) => {
+        let caculContent = cacul.innerHTML;
+        screen_result.innerHTML = screen_result.innerHTML + caculContent;
     }
 
 }
-
-caculation = (cacul) => {
-    let caculContent = cacul.innerHTML;
-    ca.innerHTML = caculContent;
+calculate = () => {
+    var result = eval(screen_result.innerHTML);
+    screen_result.innerHTML = result;
 }
 
 var removeContent = () => {
-    screen_old.innerHTML = "";
-    screen_new.innerHTML = "";
-    ca.innerHTML = "";
+    screen_result.innerHTML = "";
 }
-calculate = () => {
-    number1 = Number(screen_old.innerHTML);
-    number2 = Number(screen_new.innerHTML);
-    cacula = ca.innerHTML
-    switch (cacula) {
-        case "+":
-            {
-                val = number1 + number2;
-                break;
-            }
-        case "-":
-            {
-                val = number1 - number2;
-                break;
-            }
-        case "*":
-            {
-                val = number1 * number2;
-                break;
-            }
-        case "/":
-            {
-                val = number1 / number2;
-                break;
-            }
-    }
-    screen_old.innerHTML = val;
-    screen_new.innerHTML = "";
-    ca.innerHTML = "";
+
+del = () => {
+    let str = screen_result.innerHTML;
+    let del = str.slice(0, -1);
+    screen_result.innerHTML = del;
 }
